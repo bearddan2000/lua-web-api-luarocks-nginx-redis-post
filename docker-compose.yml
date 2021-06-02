@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+
+  redis-srv:
+    network_mode: host
+    image: redis:latest
+
+  lua-srv:
+    network_mode: host
+    build: lua-srv
+    depends_on:
+        - redis-srv
